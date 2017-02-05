@@ -9,13 +9,13 @@
 
 <ifModule mod_headers.c>
     <filesMatch ".(ico|pdf|flv|jpg|jpeg|png|gif|swf)$">
-        Header set Cache-Control "max-age=2592000, public"
+        Header set Cache-Control "max-age=600, public"
     </filesMatch>
     <filesMatch ".(css|js)$">
-        Header set Cache-Control "max-age=604800, public"
+        Header set Cache-Control "max-age=600, public"
     </filesMatch>
     <filesMatch ".(html|txt)$">
-        Header set Cache-Control "max-age=172800, public, must-revalidate"
+        Header set Cache-Control "max-age=600, public, must-revalidate"
     </filesMatch>
 </ifModule>
 
