@@ -19,13 +19,6 @@
     </filesMatch>
 </ifModule>
 
-<ifModule mod_headers.c>
-    <filesMatch ".(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
-        Header unset ETag
-        FileETag None
-    </filesMatch>
-</ifModule>
-
 <IfModule mod_deflate.c>
     <FilesMatch ".(css|js|x?html?|php|xml)$">
         SetOutputFilter DEFLATE
