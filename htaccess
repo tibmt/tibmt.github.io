@@ -7,24 +7,6 @@
     ExpiresByType application/x-javascript "access plus 600 seconds"
 </ifModule>
 
-<ifModule mod_headers.c>
-    <filesMatch "\.(jpg|jpeg|png)$">
-        Header set Cache-Control "max-age=600, public, must-revalidate"
-    </filesMatch>
-    <filesMatch "\.(css|js)$">
-        Header set Cache-Control "max-age=600, public, must-revalidate"
-    </filesMatch>
-    <filesMatch "\.(html|txt)$">
-        Header set Cache-Control "max-age=600, public, must-revalidate"
-    </filesMatch>
-</ifModule>
-
-<IfModule mod_deflate.c>
-    <FilesMatch ".(css|js|x?html?|php|xml)$">
-        SetOutputFilter DEFLATE
-    </FilesMatch>
-</IfModule>
-
 <ifModule mod_gzip.c>
     mod_gzip_on Yes
     mod_gzip_dechunk Yes
