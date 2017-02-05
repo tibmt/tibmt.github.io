@@ -1,10 +1,10 @@
 <ifModule mod_expires.c>
     ExpiresActive On
-    ExpiresDefault "access plus 600 seconds"
-    ExpiresByType image/jpeg "access plus 600 seconds"
-    ExpiresByType text/css "access plus 600 seconds"
-    ExpiresByType text/javascript "access plus 600 seconds"
-    ExpiresByType application/x-javascript "access plus 600 seconds"
+    ExpiresDefault "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    ExpiresByType application/x-javascript "access plus 1 year"
 </ifModule>
 
 <ifModule mod_gzip.c>
