@@ -8,10 +8,10 @@
 </ifModule>
 
 <ifModule mod_headers.c>
-    <filesMatch ".(ico|pdf|flv|jpg|jpeg|png|gif|swf)$">
+    <filesMatch "\.(jpg|jpeg|png)$">
         Header set Cache-Control "max-age=600, public"
     </filesMatch>
-    <filesMatch ".(css|js)$">
+    <filesMatch "\.(css|js)$">
         Header set Cache-Control "max-age=600, public"
     </filesMatch>
     <filesMatch ".(html|txt)$">
