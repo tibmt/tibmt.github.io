@@ -1,11 +1,36 @@
 <ifModule mod_expires.c>
     ExpiresActive On
-    ExpiresDefault "access plus 1 month"
-    ExpiresByType image/jpeg "access plus 1 year"
-    ExpiresByType text/css "access plus 1 year"
-    ExpiresByType text/javascript "access plus 1 year"
-    ExpiresByType application/x-javascript "access plus 1 year"
+    ExpiresDefault "access plus 600 seconds"
+    ExpiresByType image/jpeg "access plus 600 seconds"
+    ExpiresByType text/css "access plus 600 seconds"
+    ExpiresByType text/javascript "access plus 600 seconds"
+    ExpiresByType application/x-javascript "access plus 600 seconds"
 </ifModule>
+
+<ifModule mod_headers.c>
+    <filesMatch "\.(jpg|jpeg|png)$">
+        Header set Cache-Control "max-age=600"
+    </filesMatch>
+    <filesMatch "\.(css|js)$">
+        Header set Cache-Control "max-age=600"
+    </filesMatch>
+    <filesMatch ".(html|txt)$">
+        Header set Cache-Control "max-age=600, must-revalidate"
+    </filesMatch>
+</ifModule>
+
+<ifModule mod_headers.c>
+    <filesMatch ".(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+        Header unset ETag
+        FileETag None
+    </filesMatch>
+</ifModule>
+
+<IfModule mod_deflate.c>
+    <FilesMatch ".(css|js|x?html?|php|xml)$">
+        SetOutputFilter DEFLATE
+    </FilesMatch>
+</IfModule>
 
 <ifModule mod_gzip.c>
     mod_gzip_on Yes
